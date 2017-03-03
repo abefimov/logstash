@@ -22,6 +22,7 @@ require "pluginmanager/pack"
 require "pluginmanager/unpack"
 require "pluginmanager/generate"
 require "pluginmanager/prepare_offline_pack"
+require "pluginmanager/proxy_support"
 
 module LogStash
   module PluginManager
