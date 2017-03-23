@@ -20,6 +20,9 @@ describe "(HTTP_PROXY) CLI > logstash-plugin install", :linux => true do
     @http_proxy = @fixture.get_service("http_proxy")
   end
 
+  before(:all) { @http_proxy.setup }
+  after(:all) { @http_proxy.teardown }
+
   before do
     # Make sure we don't have any settings from a previous execution
     FileUtils.rm_rf(File.join(Dir.home, ".m2", "settings.xml"))
@@ -48,9 +51,6 @@ describe "(HTTP_PROXY) CLI > logstash-plugin install", :linux => true do
     end
 
     context "when a proxy is configured" do
-      before(:all) { @http_proxy.setup }
-      after(:all) { @http_proxy.teardown }
-
       it "should allow me to install a plugin" do
         environment = {
           "http_proxy" => "http://localhost:3128",
