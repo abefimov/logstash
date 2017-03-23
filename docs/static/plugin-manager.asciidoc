@@ -9,8 +9,8 @@ Interface (CLI) invocations described below.
 [[http-proxy]]
 === Proxy configuration
 
-The majority of the plugin manager commands require to have direct access to the internet, if your organization is behind a firewall you can
-set theses environments variables to configure Logstash to use your proxy.
+The majority of the plugin manager commands require access to the internet to reach https://rubygems.org[RubyGems.org].
+If your organization is behind a firewall you can set these environments variables to configure Logstash to use your proxy.
 
 [source, shell]
 ----------------------------------
