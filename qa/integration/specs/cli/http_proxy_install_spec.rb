@@ -8,11 +8,6 @@ require "logstash/devutils/rspec/spec_helper"
 require "stud/temporary"
 require "fileutils"
 
-def gem_in_lock_file?(pattern, lock_file)
-  content =  File.read(lock_file)
-  content.match(pattern)
-end
-
 describe "(HTTP_PROXY) CLI > logstash-plugin install", :linux => true do
   before :all do
     @fixture = Fixture.new(__FILE__)
