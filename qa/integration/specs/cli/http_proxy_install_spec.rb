@@ -39,10 +39,6 @@ describe "(HTTP_PROXY) CLI > logstash-plugin install", :linux => true do
           "HTTPS_PROXY" => nil,
         }
 
-        puts "#exit"
-        puts File.exist?(File.join(Dir.home, ".m2", "settings.xml"))
-
-        cmd = "bin/logstash-plugin install --no-verify"
         execute = @logstash_cli.run_raw(cmd, true, environment)
 
         expect(execute.stderr_and_stdout).not_to match(/Installation successful/)
